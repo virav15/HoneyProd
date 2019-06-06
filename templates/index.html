@@ -18,43 +18,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bubble.css') }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/colony_style.css') }}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/jordy_style.css') }}" />
   </head>
 
   <body>
     <!--navbar-->
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="link" href="/index">
-              <h3 class="link">Honey-Production Analysis</h3>
-            </a>
-            
+    <div class="wrapper">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+          The Cause of Bee Colony Reduction
+        </a>
+        <div id = "menu">
+          <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Menu</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#">Cause</a>
+                <a href="#">CCD</a>
+                <a href="#">Economic</a>
+                <a href="#">Social Presence</a>
+              </div>
+            </div>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <!-- <li>
-            <a href="/about">
-              <h5>About</h5>
-            </a>
-          </li> -->
-          <!-- <li>
-            <a href="/bubble">
-              <h5>Production - Prices</h5>
-            </a>
-          </li> -->
-          <!-- <li>
-            <a href="/map">
-              <h5>Production - Temp.</h5>
-            </a>
-          </li> -->
-          <!-- <li>
-            <a href="/colony">
-              <h5>Bee Population</h5>
-            </a>
-          </li> -->
-        </ul>
-      </div>
-    </nav>
-
+      </nav>
+    </div>
+    <!--navbar end-->
 
     <div>
 
@@ -181,6 +168,7 @@
   <script src="https://code.highcharts.com/maps/modules/map.js"></script>
   <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
   <script src="{{ url_for('static', filename='js/hmLogic.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/jordy_js.js') }}"></script>
   <!-- <script src="https://code.highcharts.com/js/themes/dark-unica.js"></script> -->
 
 
