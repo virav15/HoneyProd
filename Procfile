@@ -1,1 +1,1 @@
-web: gunicorn honey-productionapp:app
+web: gunicorn app:app
