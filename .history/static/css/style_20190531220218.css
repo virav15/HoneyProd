@@ -10,7 +10,6 @@ body {
     color: white;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
-    padding:10px;
 }
 #particles-js {
     width: 100%;
