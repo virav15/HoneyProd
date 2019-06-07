@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
+.wrapper {
+  position: relative;
+  background-color: white;
+}
+
+/* The footer is positioned at the bottom of the page */
+.footer {
+  position: relative;
+  background: #ffffff;
+}
+
+/* The code styles the text at the bottom of the footer */
+.footer > .bottom {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+}
+
+.navbar {
+  padding: 15px;
+  margin: 0;
+}
+
+.navbar-nav {
+  font-size: 20px;
+  list-style: none;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+.landing-headers {
+  color: #fff280;
+}
+
+.text {
+  color: black
+}
+.dropbtn {
+  background-color: rgb(110, 113, 114);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  float: right;
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
