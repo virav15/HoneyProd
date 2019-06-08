@@ -1,0 +1,84 @@
+---
+title: "The Life of a Bee"
+output: 
+  html_document:
+    fig_width: 20
+    fig_height: 4
+---
+```{r}
+library("tidyverse")
+```
+
+```{r}
+honeyData <- read.csv("./HoneyData1.csv")
+```
+
+```{r}
+head(honeyData)
+```
+
+
+```{r}
+honeyData <- honeyData %>%
+  filter(year != 2017 & year >= 1998) %>%
+  dplyr::select(state = StateName, region = Region, 
+                year, numcol,
+                neonicotinoids = nAllNeonic,
+                clothianidin = nCLOTHIANIDIN,
+                thiamethoxam = nTHIAMETHOXAM,
+                acetamiprid = nACETAMIPRID,
+                thiacloprid = nTHIACLOPRID,
+                yieldpercol, 
+                totalprod, 
+                priceperlb,
+                -prodvalue)
+```
+
+```{r}
+honeyData <- drop_na(honeyData)
+```
+
+```{r}
+honeyData
+```
+
+```{r}
+honey_data_grouped <- honeyData %>% group_by(state, year)
+```
+
+```{r}
+honey_data_grouped <- honey_data_grouped %>% arrange(state, year)
+```
+
+```{r}
+honey_data_grouped
+```
+
+```{r}
+library(plotly)
+library(dplyr)
+library(plyr)
+```
+
+```{r}
+bar_plot <- plot_ly(data = honey_data_grouped, name = 'Neonicotinoids', x = ~year, y = ~neonicotinoids, type = "bar", showlegend=TRUE,
+              marker=list(color=~"gray", showscale=FALSE)) %>% 
+  add_trace(data = honey_data_grouped, name = 'Thiamethoxam', x = ~year, y = ~thiamethoxam, type = "bar", showlegend=TRUE,
+              marker=list(color=~'brown', showscale=FALSE)) %>% 
+  add_trace(data = honey_data_grouped, name = 'Clothianidin', x = ~year, y = ~clothianidin, type = "bar", showlegend=TRUE,
+              marker=list(color=~'orange', showscale=FALSE)) %>% 
+  add_trace(data = honey_data_grouped, name = 'Acetamiprid', x = ~year, y = ~acetamiprid, type = "bar", showlegend=TRUE,
+              marker=list(color=~'green', showscale=FALSE)) %>% 
+  add_trace(data = honey_data_grouped, name = 'Thiacloprid', x = ~year, y = ~thiacloprid, type = "bar", showlegend=TRUE,
+              marker=~list(color=~'black', showscale=FALSE)) %>% 
+  layout(showlegend=TRUE, xaxis = list(side="right", showgrid=FALSE), name = "Year", yaxis=list(showgrid=FALSE), name = "Neonicotinoids", title = 'Pesticide use in the US')
+```
+
+```{r}
+bar_plot
+```
+
+```{r}
+htmlwidgets::saveWidget(bar_plot, "bar_graph.html")
+```
+
