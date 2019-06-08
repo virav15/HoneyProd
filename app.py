@@ -107,7 +107,7 @@ def particles():
 def viral():
     return render_template("economic_viral.html")
 
-    @app.route("/cause")
+@app.route("/cause")
 def jordy():
     return render_template("jordy_index.html")
 
