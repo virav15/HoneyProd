@@ -108,7 +108,7 @@ def viral():
     return render_template("economic_viral.html")
 
     @app.route("/cause")
-def viral():
+def jordy():
     return render_template("jordy_index.html")
 
 @app.route("/bubble")
