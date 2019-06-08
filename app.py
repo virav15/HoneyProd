@@ -103,6 +103,10 @@ def particles():
 
 
 
+@app.route("/ccd")
+def abla():
+    return render_template("ccd.html")
+
 @app.route("/economic")
 def viral():
     return render_template("economic_viral.html")
