@@ -103,13 +103,9 @@ def particles():
 
 
 
-@app.route("/economic")
-def viral():
+@app.route("/viral")
+def bubble():
     return render_template("economic_viral.html")
-
-    @app.route("/cause")
-def viral():
-    return render_template("jordy_index.html")
 
 @app.route("/bubble")
 def bubble():

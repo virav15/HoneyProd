@@ -102,20 +102,9 @@ def particles():
     return jsonify(particles.to_dict(orient="records"))
 
 
-
-@app.route("/economic")
-def viral():
-    return render_template("economic_viral.html")
-
-    @app.route("/cause")
-def viral():
-    return render_template("jordy_index.html")
-
 @app.route("/bubble")
 def bubble():
     return render_template("bubble.html")
-
-
 
 @app.route("/map")
 def map():
