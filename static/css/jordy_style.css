@@ -6,7 +6,7 @@
 html,
 body {
   height: 100%;
-  padding: 10px;
+  padding: 0;
   margin: 0;
 }
 
@@ -106,3 +106,173 @@ body {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+#bee {
+  pointer-events: none;
+  position: absolute;
+  transition: .3s;
+}
+
+.bee-head {
+  z-index: 10;
+  height: 15px;
+  width: 15px;
+  right: -5px;
+  top: -5px;
+  position: absolute;
+  background: black;
+}
+
+.bee-tentacle {
+  height: 10px;
+  width: 2px;
+  background: black;
+  position: absolute;
+}
+
+.bee-tentacle.one {
+  top: -10px;
+  left: 0;
+}
+
+.bee-tentacle.two {
+  top: -15px;
+  left: 7px;
+  height: 15px;
+}
+
+.bee-eye {
+  height: 2px;
+  width: 2px;
+  background: white;
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+}
+
+.bee-eye.one {
+  top: 5px;
+  left: 3px;
+}
+
+.bee-eye.two {
+  height: 4px;
+  width: 4px;
+  top: 5px;
+  left: 8px;
+}
+
+.bee-body {
+  width: 50px;
+  height: 10px;
+  background: linear-gradient(90deg, yellow 50%, black 50%);
+  background-size: 25%;
+}
+
+.bee-wing {
+  margin-left: 5px;
+  height: 5px;
+  width: 25px;
+  background: #A9A9FF;
+  animation: .1s flap-wings infinite;
+}
+
+.bee-stinger {
+  margin-left: -10px;
+  height: 2px;
+  width: 10px;
+  background: #757575;
+}
+
+.idle-body {
+  animation: 1s idle-body infinite;
+}
+
+@keyframes idle-body {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(0, 2px);
+  }
+  20% {
+    transform: translate(0, 4px);
+  }
+  25% {
+    transform: translate(0, 6px);
+  }
+  30% {
+    transform: translate(0, 9px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  60% {
+    transform: translate(0, 9px);
+  }
+  70% {
+    transform: translate(0, 6px);
+  }
+  75% {
+    transform: translate(0, 4px);
+  }
+  80% {
+    transform: translate(0, 2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.idle-head {
+  animation: 1s idle-head infinite;
+}
+
+@keyframes idle-head {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(0, 1px);
+  }
+  20% {
+    transform: translate(0, 2.5px);
+  }
+  25% {
+    transform: translate(0, 4px);
+  }
+  30% {
+    transform: translate(0, 5.5px);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  60% {
+    transform: translate(0, 5.5px);
+  }
+  70% {
+    transform: translate(0, 4px);
+  }
+  75% {
+    transform: translate(0, 2.5px);
+  }
+  80% {
+    transform: translate(0, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes flap-wings {
+  0% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(2.5);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
