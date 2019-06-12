@@ -103,6 +103,11 @@ def particles():
 
 
 
+@app.route("/social")
+def alex():
+    return render_template("social_alex_html.html")
+
+
 @app.route("/ccd")
 def abla():
     return render_template("ccd.html")
